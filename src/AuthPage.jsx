@@ -3,7 +3,7 @@ const AuthPage = (props) => {
     const onSubmit = (e) => {
       e.preventDefault();
       const { value } = e.target[0];
-      axios.post('http://localhost:3001/authenticate',{username:value})      
+      axios.post('https://chat-app-fdi1.onrender.com/authenticate',{username:value})      
       .then(res=>props.onAuth({ ...res.data, secret: value }))
       .catch(e=>{console.log('error',e)})
     };
