@@ -4,16 +4,16 @@ const AuthPage = (props) => {
       e.preventDefault();
       const { value } = e.target[0];
       axios.post('https://chat-app-fdi1.onrender.com/authenticate',{username:value})      
-      .then(res=>props.user({ ...res.data, secret: value }))
+      .then(res=>props.onAuth({ ...res.data, secret: value }))
       .catch(e=>{console.log('error',e)})
     };
   
     return (
       <div className="background">
         <form onSubmit={onSubmit} className="form-card">
-          <div className="form-title">Welcome 👋</div>
+          <div className="form-title">Welcome</div>
   
-          <div className="form-subtitle">Set a username to get started</div>
+          <div className="form-subtitle">username to get started</div>
   
           <div className="auth">
             <div className="auth-label">Username</div>
